@@ -1,7 +1,6 @@
 // This fails borrow checker because largest has immutable reference to dst but
 // inside if check dst.push() requires mutable reference and it might deallocate memory
 // thats being referenced by largest variable 
-
 fn add_big_strings(dst: &mut Vec<String>, src: &[String]) {
     let largest: &String = 
       dst.iter().max_by_key(|s| s.len()).unwrap();
